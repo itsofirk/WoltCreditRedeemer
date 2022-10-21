@@ -12,8 +12,12 @@ class WoltWebsiteSettings(BaseSettings):
     base_url = "https://wolt.com/en"
     redeem_path = "/me/redeem-code"
 
-    login_button_text = "Log in"
+    show_login_form_button_text = "Log in"
+    email_input_id = "method-select-email"
+    send_email_button_text = "Next"
     promo_code_hint = "enter promo code..."
     redeem_button_text = "redeem"
 
 
+class Credentials(BaseSettings):
+    email: str = Field(...)

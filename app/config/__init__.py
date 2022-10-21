@@ -1,7 +1,9 @@
-from config import AppConfig, WoltWebsiteSettings
+from .config import AppConfig, WoltWebsiteSettings, Credentials
 import logging
 
 app_config = AppConfig()
-logging.basicConfig(level=app_config.log_level)
-
 wolt_settings = WoltWebsiteSettings()
+credentials = Credentials()
+
+
+logging.basicConfig(level=app_config.log_level)
