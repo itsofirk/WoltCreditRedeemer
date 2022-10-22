@@ -9,10 +9,9 @@ from config import wolt_settings
 
 logger = logging.getLogger(__name__)
 opts = Options()
-# opts.add_argument("--headless")
+opts.add_argument("--headless")
 opts.add_argument("--incognito")
 opts.add_argument("--start-maximized")
-# opts.add_argument("--window-size=1100,1100")
 browser = Edge(options=opts)
 
 
@@ -40,6 +39,7 @@ def find_any_by_text(inner_text, tag='*') -> WebElement:
         raise Exception(f'Found more than one button matching: {inner_text}')
     return login_buttons[0]
 
+
 def find_button_by_text(inner_text) -> WebElement:
     login_buttons = browser.find_elements(By.XPATH, f'//button[text()="{inner_text}"]')
     if len(login_buttons) == 0:
@@ -47,13 +47,3 @@ def find_button_by_text(inner_text) -> WebElement:
     if len(login_buttons) != 1:
         raise Exception(f'Found more than one button matching: {inner_text}')
     return login_buttons[0]
-
-
-def find_login_button1() -> WebElement:
-    login_buttons = browser.find_elements(By.XPATH, f'//input[text()="{wolt_settings.show_login_form_button_text}"]')
-    if len(login_buttons) == 0:
-        raise Exception('No matching buttons were found')
-    if len(login_buttons) != 1:
-        raise Exception(f'Found more than one button matching: {wolt_settings.show_login_form_button_text}')
-    return login_buttons[0]
-

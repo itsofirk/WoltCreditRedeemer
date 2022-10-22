@@ -1,2 +1,4 @@
 selenium
 pydantic
+email_listener
+pyyaml
