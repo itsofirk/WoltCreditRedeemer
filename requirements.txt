@@ -2,3 +2,4 @@ selenium
 pydantic
 email_listener
 pyyaml
+pypdf2
